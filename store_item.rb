@@ -1,6 +1,5 @@
-# store_item_1 = {color: "black", price: 10, expensive: true}
-# store_item_2 = {:color => "blue", :price => 9 expensive: true}
-# store_item_3 = {color: "gray", price: 7, expensive: true}
+# store_item_1 = {color: "black", name: "car", price: 10, expensive: true}
+# store_item_2 = {:color => "blue", name "computer", :price => 9, expensive: true}
 
 class Store_Items
 
@@ -35,7 +34,9 @@ end
 item_1 = Store_Items.new({color: "black", name: "car", :price => 80000, :expensive => true})
 
 puts item_1.color
+puts item_1.name
 puts item_1.price
 puts item_1.expensive
+
 puts item_1.info
 
