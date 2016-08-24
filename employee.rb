@@ -1,16 +1,6 @@
-# employee_1 = {first_name: "Martha", 
-#              last_name: "Stewart", 
-#              salary: 80000,
-#              active: true}
-
-# employee_2 = {first_name: "James", last_name: "Bond", salary: 60000, active: true}
-
-# puts "#{employee_1[:first_name]} #{employee_1[:last_name]} makes $#{employee_1[:salary]}."
-
-# puts "#{employee_2[:first_name]} #{employee_2[:last_name]} makes $#{employee_2[:salary]}."
-
-class Employee
-  attr_reader :first_name, :last_name
+class Employee 
+  attr_reader :first_name, :last_name, :salary, :active
+  # attr_writer :first_name
 
   def initialize(employee_input_hash)
     @first_name = employee_input_hash[:first_name]
@@ -18,6 +8,16 @@ class Employee
     @salary = employee_input_hash[:salary]
     @active = employee_input_hash[:active]
   end
+
+  # same as attr_reader
+  # def first_name
+  #  @first_name
+  # end
+
+  # same as attr_writer
+  # def first_name=(new_value)
+  #  @first_name = new_value
+  # end
 
   def print_info
     puts "#{first_name} #{last_name} makes $#{@salary} a year."
