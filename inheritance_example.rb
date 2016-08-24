@@ -1,55 +1,62 @@
 class Vehicle
-  def initialize
-    @speed = 0
-    @direction = 'north'
-  end
+ def initialize(vehicle_hash)
+   @fuel = vehicle_hash[:fuel]
+   @make = vehicle_hash[:make]
+   @model = vehicle_hash[:model]
+   @speed = vehicle_hash[:speed]
+   @type = vehicle_hash[:type]
+   @weight = vehicle_hash[:weight]
+   @direction = 'north'
+ end
 
-  def brake
-    @speed = 0
-  end
+ def brake
+   @speed = 0
+ end
 
-  def accelerate
-    @speed += 10
-  end
+ def accelerate
+   @speed += 10
+ end
 
-  def turn(new_direction)
-    @direction = new_direction
-  end
+ def turn(new_direction)
+   @direction = new_direction
+ end
  
-  def show_speed
-    puts @speed
-  end
+ def show_speed
+   puts @speed
+ end
 
-  def show_direction
-    puts @direction
-  end
+ def show_direction
+   puts @direction
+ end
 end
 
 class Car < Vehicle
-  def initialize
-    super # example of super
-    @gas = 10
-  end
-  
-  def honk_horn
-    puts "Beeeeeeep!"
-  end
+ def initialize(vehicle_hash)
+   super(vehicle_hash)
+   @gas = 10
+ end
+
+ def honk_horn
+   puts "Beeeeeeep!"
+ end
 end
 
 class Bike < Vehicle
-  def ring_bell
-    puts "Ring ring!"
-  end
+ def initialize(vehicle_hash)
+   super(vehicle_hash)
+ end
+
+ def ring_bell
+   puts "Ring ring!"
+ end
 end
 
-bike = Bike.new
+bike = Bike.new({speed: 10, type: "Schwinn", weight: "20lbs"})
 bike.ring_bell
 bike.accelerate
 bike.show_speed
 
-car = Car.new
+car = Car.new({fuel: "diesel", make: "honda", model: "civic"})
 car.honk_horn
-car.turn("south")
+car.turn("South")
 car.show_direction
-
-p car

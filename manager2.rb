@@ -1,7 +1,11 @@
 class Employee
   attr_reader :first_name, :last_name
+  # attr_writer :active
+  @@id = 0
 
   def initialize(input_options)
+    @@id += 1
+    @id = @@id
     @first_name = input_options[:first_name]
     @last_name = input_options[:last_name]
     @salary = input_options[:salary]
@@ -15,11 +19,16 @@ class Employee
   end
 
   def print_info
-    puts "#{@first_name} #{@last_name} makes #{@salary} a year."
+    puts "#{@first_name} #{@last_name} makes #{amount_per_year}"
   end
 
   def give_annual_raise
     @salary = 1.05 * @salary
+  end
+
+private 
+  def amount_per_year
+    "#{@salary} a year."
   end
 end
 
@@ -42,7 +51,8 @@ class Manager < Employee
   end
 
   def fire_all_employees
-      @employees.each do |employee|
+    @employees.each do |employee|
+      # employee.active = false ( if you were to use attr_writer)
       employee.fire
     end
   end

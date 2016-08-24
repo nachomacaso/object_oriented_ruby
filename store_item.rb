@@ -1,8 +1,7 @@
 # store_item_1 = {color: "black", name: "car", price: 10, expensive: true}
 # store_item_2 = {:color => "blue", name "computer", :price => 9, expensive: true}
 
-class Store_Items
-
+class StoreItems
   def initialize(item_hash)
     @color = item_hash[:color]
     @price = item_hash[:price]
@@ -28,6 +27,12 @@ class Store_Items
 
   def info
     puts "The #{color} #{name} has a price of $#{price}."
+  end
+end
+
+class Food < StoreItems
+  def shelf_life
+    puts "Item expired"
   end
 end
 
