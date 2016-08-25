@@ -4,7 +4,7 @@ class CreditCard
   end
 
   def card_number
-    protected_card_number
+    "#{protected_card_number}"
   end
 
 private
@@ -13,4 +13,7 @@ private
     "XXXX XXXX XXXX #{last_four}"
   end
 end
+
+card = CreditCard.new
+card.card_number
 
