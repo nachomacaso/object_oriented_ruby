@@ -15,5 +15,5 @@ private
 end
 
 card = CreditCard.new
-card.card_number
+puts card.card_number
 

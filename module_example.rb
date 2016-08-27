@@ -34,4 +34,4 @@ class Bike
 end
 
 bike = Bike.new
-bike.accelerate
+p bike.accelerate
